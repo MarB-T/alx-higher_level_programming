@@ -8,3 +8,5 @@ Task4: Print float to a specified precision
 7-edges.py: Prints different sections of a string
 8-concat_edges.py: concatenates different parts of a string together
 9-easter_egg.py: Dispays The Zen of Python by Tim Peters
+10-check_cycle.c: Checks the presence of a cycle in a singly linked list
+100-write.py: prints string to stderr using write
