@@ -10,3 +10,4 @@ Task4: Print float to a specified precision
 9-easter_egg.py: Dispays The Zen of Python by Tim Peters
 10-check_cycle.c: Checks the presence of a cycle in a singly linked list
 100-write.py: prints string to stderr using write
+101-compile: Compiles python script in env variable using py_compile function and craete a .pyc file
