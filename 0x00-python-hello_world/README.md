@@ -3,3 +3,4 @@
 2-print.py: Python script to print string havi one double quote
 3-print_number: Python script to print number using f-string formating
 Task4: Print float to a specified precision
+5-print_string.py: Prints a sring 3 times followed by the first 9 characters of the string
