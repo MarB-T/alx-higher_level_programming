@@ -6,3 +6,4 @@ Task4: Print float to a specified precision
 5-print_string.py: Prints a sring 3 times followed by the first 9 characters of the string
 6-concat.py: Use f-string to  concatnate two string variables
 7-edges.py: Prints different sections of a string
+8-concat_edges.py: concatenates different parts of a string together
