@@ -11,3 +11,10 @@ Task4: Print float to a specified precision
 10-check_cycle.c: Checks the presence of a cycle in a singly linked list
 100-write.py: prints string to stderr using write
 101-compile: Compiles python script in env variable using py_compile function and craete a .pyc file
+102-magic_calculation.py: python function to do the same thing as the bytecode   
+3           0 LOAD_CONST               1 (98)
+              3 LOAD_FAST                0 (a)
+              6 LOAD_FAST                1 (b)
+              9 BINARY_POWER
+             10 BINARY_ADD
+             11 RETURN_VALUE
