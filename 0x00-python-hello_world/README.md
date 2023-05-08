@@ -7,3 +7,4 @@ Task4: Print float to a specified precision
 6-concat.py: Use f-string to  concatnate two string variables
 7-edges.py: Prints different sections of a string
 8-concat_edges.py: concatenates different parts of a string together
+9-easter_egg.py: Dispays The Zen of Python by Tim Peters
