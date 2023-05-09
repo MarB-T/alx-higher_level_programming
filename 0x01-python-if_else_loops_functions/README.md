@@ -4,3 +4,4 @@
 2-print_alphabet.py: Prints ASCII alphabet in lowercase
 3-print_alphabt.py: Prints lowercase ASCII characters except "q" and "e"
 4-print_hexa.py: Prints numbers in decimal and hexadecimal from 0 to 98
+5-print_comb2.py: Prints numbers 00-99 separated by comma and space
