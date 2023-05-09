@@ -10,3 +10,4 @@
 8-uppercase.py: Fuction that prints a string in uppercase followed by new line
 9-print_last_digit.py: function to print the last digit of a number
 10-add.py: function to add two integers and return sum
+11-pow.py: function that computes a to the power of b and return the value.
