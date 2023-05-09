@@ -14,3 +14,4 @@
 12-fizzbuzz.py: function that prints numbers 1 to 100 replacing multiples of 3 by Fizz and those of 5 by FizzBuzz
 13-insert_number.c: Inserts a node in an ordered linked list
 100-print_tebahpla.py: prints ASCII alphabet in reverse and alternating upper and lower cases
+101-remove_char_at.py: function that creates a copy of the string, removing the character at the position n
