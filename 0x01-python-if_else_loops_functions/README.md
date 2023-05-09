@@ -6,3 +6,4 @@
 4-print_hexa.py: Prints numbers in decimal and hexadecimal from 0 to 98
 5-print_comb2.py: Prints numbers 00-99 separated by comma and space
 6-print_comb3.py: Prints all possible combinations of two digits without repetition
+7-islower.py: Function to check if pass character is lowercase
