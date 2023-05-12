@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from magic_calculation_102 import add, sub
+add = __import__('magic_calculation_102').add
+sub = __import__('magic_calculation_102').sub
 
 def magic_function(a, b):
     if a < b:
