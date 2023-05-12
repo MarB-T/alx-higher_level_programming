@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-def my_function(a, b):
+from magic_calculation_102 import add, sub
+
+def magic_calculation(a, b):
     c = 0
     if a < b:
         c = add(a, b)
@@ -8,4 +10,3 @@ def my_function(a, b):
     else:
         c = sub(a, b)
     return c
-
