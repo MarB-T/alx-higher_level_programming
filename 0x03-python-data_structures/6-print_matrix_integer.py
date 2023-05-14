@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
+    if matrix is None:
+        print('\n')
     for lis in matrix:
-        for item in lis:
-            if item == len(lis):
-                print("{}".format(item))
+        for item in range(len(lis)):
+            if item == len(lis) -1:
+                print("{:d}".format(lis[item]))
             else:
-                print("{}".format(item), end=' ')
-        print()
+                print("{:d}".format(lis[item]), end=' ')
