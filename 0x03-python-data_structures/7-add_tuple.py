@@ -17,4 +17,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
     b = list_d[1] + list_e[1]
     list_f = [a, b]
     return (tuple(list_f))
-
