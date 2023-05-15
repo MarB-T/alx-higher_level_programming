@@ -10,6 +10,7 @@ def check_tuple(tuple_a=()):
 
     return (list_c)
 
+
 def add_tuple(tuple_a=(), tuple_b=()):
     list_d = check_tuple(tuple_a)
     list_e = check_tuple(tuple_b)
