@@ -2,6 +2,7 @@
 
 def magic_calculation(a, b):
     from magic_calculation_102 import add, sub
+    
     c = 0
     if a < b:
         c = add(a, b)
