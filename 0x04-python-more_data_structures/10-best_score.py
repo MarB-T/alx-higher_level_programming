@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if a_dictionary is None or len(a_dictionary) == 0:
         return (None)
-    best = 0
+    best = next(iter(a_dictionary.values()))
     for key, value in a_dictionary.items():
         if value >= best:
             best_key = key
