@@ -1,21 +1,33 @@
 #include <Python.h>
+#include <string.h>
+#include <stdio.h>
 
 /**
  * print_python_list - prints python list info
  * @p: python object
  */
 
-void print_python_list(PyObject *p) {
-    Py_ssize_t size = PyList_Size(p);
-    Py_ssize_t i;
+void print_python_list(PyObject *p)
+{
+	int size, alloc, i;
+	const char *type;
+	PyListObject *list = (PyListObject *)p;
+	PyVarObject *var = (PyVarObject *)p;
 
-    printf("[*] Python list info\n");
-    printf("[*] Size of the Python List = %zd\n", size);
-    printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
+	size = var->ob_size;
+	alloc = list->allocated;
 
-    for (i = 0; i < size; i++) {
-        printf("Element %zd: %s\n", i, Py_TYPE(PyList_GetItem(p, i))->tp_name);
-    }
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %d\n", size);
+	printf("[*] Allocated = %d\n", alloc);
+
+	for (i = 0; i < size; i++)
+	{
+		type = list->ob_item[i]->ob_type->tp_name;
+		printf("Element %d: %s\n", i, type);
+		if (strcmp(type, "bytes") == 0)
+			print_python_bytes(list->ob_item[i]);
+	}
 }
 
 /**
@@ -23,29 +35,33 @@ void print_python_list(PyObject *p) {
  * @p: python object in question
  */
 
-void print_python_bytes(PyObject *p) {
-    Py_ssize_t size;
-    char *str;
-    int i;
+void print_python_bytes(PyObjects *p)
+{
+	unsigned char i, size;
+	PyBytesObject *bytes = (PyBytesObject *)p;
 
-    printf("[.] bytes object info\n");
+	printf("[.] bytes object info\n");
+	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 
-    if (!PyBytes_Check(p)) {
-        printf("  [ERROR] Invalid Bytes Object\n");
-        return;
-    }
+	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
+	printf("  trying string: %s\n", bytes->ob_sval);
 
-    size = PyBytes_Size(p);
-    str = PyBytes_AsString(p);
+	if (((PyVarObject *)p)->ob_size > 10)
+		size = 10;
+	else
+		size = ((PyVarObject *)p)->ob_size + 1;
 
-    printf("  size: %zd\n", size);
-    printf("  trying string: %s\n", str);
-
-    if (size > 10)
-        size = 10;
-
-    printf("  first %zd bytes: ", size);
-    for (i = 0; i < size; i++)
-        printf("%02x%c", (unsigned char)str[i], (i < size - 1) ? ' ' : '\n');
+	printf("  first %d bytes: ", size);
+	for (i = 0; i < size; i++)
+	{
+		printf("%02hhx", bytes->ob_sval[i]);
+		if (i == (size - 1))
+			printf("\n");
+		else
+			printf(" ");
+	}
 }
-
