@@ -1,6 +1,7 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
     class Square declaration
+
 
 
 """
@@ -18,7 +19,7 @@ class Square:
     @property
     def size(self):
         """Gets size of square"""
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -30,4 +31,4 @@ class Square:
 
     def area(self):
         """Returns the area of a square"""
-        return self.__size ** 2
+        return (self.__size ** 2)
