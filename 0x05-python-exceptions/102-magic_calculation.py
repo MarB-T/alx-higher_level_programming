@@ -2,8 +2,12 @@
 def f(a, b):
     result = 0
     for i in range(1, 3):
-        if i > a:
-        raise Exception('Too far')
-        result = result + a ** b / i
-    result = result + b + a
-    return result
+        try:
+            if i > a:
+                raise Exception('Too far')
+            else:
+                result = result + a ** b / i
+        except Exception:
+            result = result + b + a
+            break
+    return (result)
