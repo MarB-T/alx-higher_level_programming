@@ -4,6 +4,8 @@ Module declaring a class square
 
 
 """
+
+
 class Square:
     """ square artributes and variables """
 
