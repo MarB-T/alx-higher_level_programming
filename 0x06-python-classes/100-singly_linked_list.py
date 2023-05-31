@@ -42,7 +42,7 @@ class Node:
         Args:
             value:the value to replace
         """
-        if (value is not None and not isinstance(value, Node)):
+        if (value is not None and isinstance(value, Node) is False):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
