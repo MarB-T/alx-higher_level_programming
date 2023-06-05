@@ -2,7 +2,6 @@
 """ module rectangle """
 
 
-
 class Rectangle:
     """ class rectangle """
     pass

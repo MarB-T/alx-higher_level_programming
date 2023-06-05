@@ -2,7 +2,6 @@
 """ The rectangle Module """
 
 
-
 def check_value(value):
     """ function to check value """
     if value < 0:
@@ -10,7 +9,6 @@ def check_value(value):
     if isinstance(value, int) is False:
         raise TypeError("width must be an integer")
     return (True)
-
 
 
 class Rectangle:
