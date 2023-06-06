@@ -58,7 +58,8 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
         for h in range(self.__height):
-            [rectangle_repr.append(Rectangle.print_symbol) for j in range(self.__width)]
+            for j in range(self.__width):
+                rectangle_repr.append(Rectangle.print_symbol)
             if h != (self.__height - 1):
                 rectangle_repr.append('\n')
         return ("".join(rectangle_repr))
