@@ -52,9 +52,10 @@ class Rectangle:
         """ returns a string of '#' rectangle """
         rect = ""
         if self.__width == 0 or self.__height == 0:
-            return (rect)
+            return ("")
         for h in range(self.__height):
             for w in range(self.width):
                 rect += '#'
-            rect += '\n'
+            if h != (self.__height - 1):
+                rect += '\n'
         return (rect)
