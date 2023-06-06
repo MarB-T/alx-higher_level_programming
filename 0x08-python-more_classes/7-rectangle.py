@@ -54,14 +54,14 @@ class Rectangle:
 
     def __str__(self):
         """ returns a string of '#' rectangle """
-        rect = []
+        rectangle_repr = []
         if self.__width == 0 or self.__height == 0:
             return ("")
         for h in range(self.__height):
-            [rect.append(Rectangle.print_symbol) for j in range(self.__width)]
+            [rectangle_repr.append(Rectangle.print_symbol) for j in range(self.__width)]
             if h != (self.__height - 1):
-                rect.append('\n')
-        return ("".join(rect))
+                rectangle_repr.append('\n')
+        return ("".join(rectangle_repr))
 
     def __repr__(self):
         """ rectangle representation """
