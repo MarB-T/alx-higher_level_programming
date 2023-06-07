@@ -15,20 +15,23 @@ The module contains a function add_integer(a, b=98) that two arguments (integers
 >>> a(5.2, 6)
 11
 
->>> add_integer("a", 5)
+>>> a(2)
+100
+
+>>> a("a", 5)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
 
->>> add_integer(5, "7")
+>>> a(5, "7")
 Traceback (most recent call last):
 TypeError: b must be an integer
 
->>> add_integer(None)
+>>> a(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
 
->>> add_integer(0, None)
+>>> a(0, None)
 Traceback (most recent call last):
 TypeError: b must be an integer
