@@ -1,1 +1,21 @@
 Test file for 7-base_geometry.py
+
+Testing for proper integer:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> test = BaseGeometry()
+    >>> test.integer_validator("my_int", 12)
+
+Testing if the value is not int:
+    >>> test.integer_validator("my_int", 'puppy')
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+Testing if the value is 0
+    >>> test.integer_validator("height", 0)
+    Traceback (most recent call last):
+    ValueError: height must be greater than 0
+
+Testing if the value is < 0:
+    >>> test.integer_validator("width", -6)
+    Traceback (most recent call last):
+    ValueError: width must be greater than 0

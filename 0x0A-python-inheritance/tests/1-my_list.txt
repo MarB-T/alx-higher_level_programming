@@ -1,16 +1,54 @@
 Test file for 1-my_list.py
 
->>> my_list = MyList([3, 3, 3, 3, 3, 3])
->>> my_list.print_sorted()
-[3, 3, 3, 3, 3, 3]
 
+checking for module docstring:
+    >>> mod = __import__("1-my_list").__doc__
+    >>> len(mod) > 1
+    True
 
->>> my_list = MyList([6, 5, 3, 4, 1, 2])
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5, 6]
+checking clas docstring:
+    >>> clss = __import__("1-my_list").MyList.__doc__
+    >>> len(clss) > 1
+    True
 
+checking method for docstring:
+    >>> mthd = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> len(mthd) > 1
+    True
 
->>> my_list = MyList([3, -3, 0, 6, 4, 1])
->>> my_list.print_sorted()
-[-3, 0, 1, 3, 4, 6]
+checking if it is subclass of list:
+    >>> MyList = __import__('1-my_list').MyList
+    >>> issubclass(MyList, list)
+    True
 
+check for empty list:
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+checking if appending is work:
+    >>> l.append(1)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> print(l)
+    [1, 2, 3, 4]
+
+checking already sorted list:
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+
+checking for negative:
+    >>> l.append(-1)
+    >>> l.print_sorted()
+    [-5, 1, 2, 3, 4]
+    >>> print(l)
+    [1, 2, 3, 4, -5]
+
+checking for multiple argument:
+    >>> l = MyList()
+    >>> l.append(1)
+    >>> l.print_sorted(l)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
