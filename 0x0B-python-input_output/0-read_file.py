@@ -4,6 +4,6 @@
 
 def read_file(filename=""):
     """ function to read a text file (UTF8) and print to stdout """
-    f = open(filename, "r")
-    print(f.read(), end='')
-    f.close()
+    with open(filename) as f:
+        for line in f:
+            print(line.strip())
