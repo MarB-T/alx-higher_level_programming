@@ -4,7 +4,7 @@
 
 def write_file(filename="", text=""):
     """ function to writea string to a text file and return number of charcters written """
-    f = open(filename, "w")
-    c = f.write(text)
-    f.close()
-    return c
+    with open(filename, "w", encoding='UTF8') as f:
+        c = f.write(text)
+        f.close()
+        return c
