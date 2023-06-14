@@ -1,42 +1,36 @@
 #!/usr/bin/python3
-"""module docstring """
+""" module docstring """
+
+
 import sys
+from collections import defaultdict
 
-metrics = {
-    '200': 0,
-    '301': 0,
-    '400': 0,
-    '401': 0,
-    '403': 0,
-    '404': 0,
-    '405': 0,
-    '500': 0
-}
-
-total_file_size = 0
+# Variables to hold metrics
+file_sizes = []
+status_counts = defaultdict(int)
 line_count = 0
 
 try:
     for line in sys.stdin:
-        line_count += 1
+        # Split the line into components
+        parts = line.strip().split()
+        if len(parts) >= 9:
+            # Extract the file size and status code
+            file_size = int(parts[-1])
+            status_code = parts[-2]
 
-        _, _, _, _, status_code, file_size = line.split(' ')
+            # Update metrics
+            file_sizes.append(file_size)
+            status_counts[status_code] += 1
+            line_count += 1
 
-        total_file_size += int(file_size)
-
-        if status_code in metrics:
-            metrics[status_code] += 1
-
+        # Print statistics every 10 lines
         if line_count % 10 == 0:
-            print(f'Total file size: {total_file_size}')
-
-            for code, count in sorted(metrics.items()):
-                if count > 0:
-                    print(f'{code}: {count}')
-
+            print("File size: ", sum(file_sizes))
+            for status_code in sorted(status_counts):
+                print(status_code + ":", status_counts[status_code])
 except KeyboardInterrupt:
-    print(f'Total file size: {total_file_size}')
-
-    for code, count in sorted(metrics.items()):
-        if count > 0:
-            print(f'{code}: {count}')
+    # Print final statistics upon keyboard interruption
+    print("File size: ", sum(file_sizes))
+    for status_code in sorted(status_counts):
+        print(status_code + ":", status_counts[status_code])
