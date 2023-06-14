@@ -16,4 +16,3 @@ def pascal_triangle(n):
         if (row != 0):
             outer[row].append(1)
     return (outer)
-
