@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ module docstring here.. """
-
-
 from models.base import Base
+
 
 class Rectangle(Base):
     """ class Rectangle """
@@ -29,7 +28,6 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = value
 
-
     @property
     def height(self):
         """ returns the value of height"""
@@ -43,7 +41,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("height must be > 0")
         self.__height = value
-
 
     @property
     def x(self):
@@ -76,3 +73,27 @@ class Rectangle(Base):
     def area(self):
         """returns the area of the rectangle"""
         return (self.__height * self.__width)
+
+    def display(self):
+        """ displays the rectangle with '#'"""
+        xw = self.__x + self.__width
+        yh = self.__y + self.__height
+        rec = [[' ' for _ in range(xw)]
+               for _ in range(yh)]
+
+        for i in range(yh):
+            for j in range(xw):
+                if i >= self.__y and j >= self.__x:
+                    rec[i][j] = '#'
+            if not '#' in rec[i]:
+                rec[i] = []
+
+        for row in rec:
+            print(''.join(row))
+
+    def __str__(self):
+        """ returns the rectangle string """
+        return (
+            f"[Rectangle] ({self.id}) {self.__x}"
+            f" /{self.__y} - {self.width}/{self.__height}"
+            )
