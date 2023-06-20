@@ -8,7 +8,6 @@ from models.square import Square
 class TestRectangle(unittest.TestCase):
     """ test for class Rectangle"""
 
-
     def test_init(self):
         """ test initialization """
         rect = Rectangle(10, 20, 0, 0)
