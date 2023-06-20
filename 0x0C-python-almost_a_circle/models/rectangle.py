@@ -9,10 +9,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialization"""
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -85,7 +85,9 @@ class Rectangle(Base):
             for j in range(xw):
                 if i >= self.__y and j >= self.__x:
                     rec[i][j] = '#'
-            if not '#' in rec[i]:
+            if '#' in rec[i]:
+                pass
+            else:
                 rec[i] = []
 
         for row in rec:
@@ -136,3 +138,8 @@ class Rectangle(Base):
                     self.__x = kwargs['x']
                 if 'y' in kwargs:
                     self.__y = kwargs['y']
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of Rectangle """
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
