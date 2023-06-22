@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ module docstring here.. """
 from models.base import Base
+import turtle
 
 
 class Rectangle(Base):
@@ -143,3 +144,13 @@ class Rectangle(Base):
         """ returns the dictionary representation of Rectangle """
         return {'id': self.id, 'width': self.__width, 'height': self.__height,
                 'x': self.__x, 'y': self.__y}
+
+    def draw(self):
+        turtle.penup()
+        turtle.goto(self.x, self.y)
+        turtle.pendown()
+        for _ in range(2):
+            turtle.forward(self.width)
+            turtle.right(90)
+            turtle.forward(self.height)
+            turtle.right(90)
