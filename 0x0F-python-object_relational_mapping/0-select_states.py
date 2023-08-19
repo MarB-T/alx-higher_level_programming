@@ -17,7 +17,7 @@ def get_states():
     states = cur.fetchall()
 
     for state in states:
-        print("{}, '{}'".format(state[0], state[1]))
+        print(state)
 
     db.close()
 
