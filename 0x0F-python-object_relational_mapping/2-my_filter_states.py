@@ -13,8 +13,8 @@ def get_state():
                     passwd=argv[2],
                     db=argv[3])
     cur = conn.cursor()
-    query = ("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-             .format(argv[4]))
+    query = ("SELECT * FROM states WHERE name LIKE BINARY '{}' \
+             ORDER BY id ASC".format(argv[4]))
     cur.execute(query)
     states = cur.fetchall()
     for state in states:
