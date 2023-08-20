@@ -24,8 +24,13 @@ def all_cities_in_state():
     search_state = {'name': argv[4]}
     cur.execute(query, search_state)
     cities = cur.fetchall()
+
+    citis = []
     for city in cities:
-        print(city)
+        citis.append(city[0])
+
+    citis_str = ', '.join(citis)
+    print(citis_str)
 
     cur.close()
 
