@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script to use user input argument to filter results 
+Script to use user input argument to filter results
 safely against sql injection
 """
 import MySQLdb
