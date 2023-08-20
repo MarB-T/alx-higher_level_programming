@@ -16,8 +16,9 @@ def get_state():
     query = ("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
              .format(argv[4]))
     cur.execute(query)
-    state = cur.fetchall()
-    print(state)
+    states = cur.fetchall()
+    for state in states:
+        print(state)
     conn.close()
 
 
