@@ -14,7 +14,7 @@ def cities_by_state():
                            passwd=argv[2],
                            db=argv[3])
     cur = conn.cursor()
-    query = ("SELECT cities.name, states.name"
+    query = ("SELECT cities.id, cities.name, states.name"
              "FROM cities"
              "JOIN states ON cities.states_id = states.id"
              "ORDER BY cities.id")
