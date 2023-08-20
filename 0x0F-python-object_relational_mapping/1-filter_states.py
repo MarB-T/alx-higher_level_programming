@@ -13,7 +13,7 @@ def states_N():
     dbname = sys.argv[3]
     conn = MySQLdb.connect(host="localhost", user=uname,
                            passwd=pword, db=dbname, port='3306')
-    cur = db.cursor()
+    cur = conn.cursor()
     query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
     cur.execute(query)
     states = cur.fetchall()
