@@ -11,7 +11,8 @@ def states_N():
     uname = sys.argv[1]
     pword = sys.argv[2]
     dbname = sys.argv[3]
-    conn = MySQLdb.connect(host="localhost", user=uname, passwd=pword, db=dbname)
+    conn = MySQLdb.connect(host="localhost",
+                           user=uname, passwd=pword, db=dbname)
     cur = db.cursor()
     query = "SELECT * FROM states WHERE name LIKE 'N%'"
     cur.execute(query)
