@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 import sys
 from model_city import City
 
+
 def fetch_by_state():
     """function to fetch cities by state"""
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
