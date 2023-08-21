@@ -22,7 +22,7 @@ def fetch_first():
     if first_state:
         print('{}: {}'.format(first_state.id, first_state.name))
     else:
-        print()
+        print('Nothing')
 
     session.close()
 
