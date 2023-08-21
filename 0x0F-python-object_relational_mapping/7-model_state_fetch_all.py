@@ -4,9 +4,9 @@ Fetches all from state
 """
 
 from sys import argv
-from sqlalchemy import Integer, Column, String
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 
 def fetch_all():
@@ -19,7 +19,7 @@ def fetch_all():
 
     states = session.query(State).order_by(State.id)
     for state in states:
-        print('{0}: {1}'.format(state.id, state.name))
+        print('{}: {}'.format(state.id, state.name))
 
 
 if __name__ == '__main__':
