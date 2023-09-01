@@ -2,11 +2,15 @@
 """Find a Peak in a List"""
 def find_peak(list_of_integers):
     """Find a Peak in a list """
-    listt = list_of_integers
-    l = len(listt)
-    if (l <= 2):
-        return (None)
-    for i in range(1, l - 1):
-	    if (listt[i - 1] <= listt[i] >= listt[i + 1]):
-	        return (listt[i])
-    return (None)
+    left = 0
+    right = len(list_of_integers) - 1
+    
+    while left < right:
+        mid = left + (right - left) // 2
+        
+        if list_of_integers[mid] < list_of_integers[mid + 1]:
+            left = mid + 1
+        else:
+            right = mid
+    
+    return list_of_integers[left]
