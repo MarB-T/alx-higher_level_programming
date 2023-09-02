@@ -8,8 +8,9 @@ import sys
 
 def resp_header():
     """ functiont to display value of one header response """
-    url = urllib.request.Request(sys.argv[1])
-    with urllib.request.urlopen(url) as response:
+    url = sys.argv[1]
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
         print(dict(response.headers).get("X-Request-Id"))
 
 
