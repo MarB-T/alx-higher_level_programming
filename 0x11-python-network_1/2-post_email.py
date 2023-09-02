@@ -15,7 +15,7 @@ def email_post():
     value = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(value)
     data = data.encode('ascii')
-    request = urllib.request.Reques(url, data)
+    request = urllib.request.Request(url, data)
     with urllib.request.urlopen(request) as response:
         print(response.read().decode('utf-8'))
 
