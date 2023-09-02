@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Script to fetch url and display request id"""
-import request
+import requests
 import sys
 
 

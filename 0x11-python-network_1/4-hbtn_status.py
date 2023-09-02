@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ script to fetch url """
-import request
+import requests
 
 
 def fetch():
