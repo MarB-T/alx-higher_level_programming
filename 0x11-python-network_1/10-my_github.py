@@ -2,15 +2,14 @@
 """ get properties from email"""
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 
 
 def properties():
     """ function """
-    headers = {}
-    headers['Authorization'] = '{} {}'.format(sys.argv[0], sys.argv[1])
-    r = requests.get('https://api.github.com/users/{}'
-                     .format(sys.argv[1]), headers=headers)
-    print(r.json().get('id'))
+    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
 
 
 if __name__ == '__main__':
