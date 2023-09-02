@@ -15,7 +15,7 @@ def requestt():
     request = urllib.request.Request(url)
     try:
         with urllib.request.urlopen(request) as response:
-            print(response.read().decode(body))
+            print(response.read().decode('utf-8'))
     except urllib.error.HTTPError as error:
         print("Error code: {}".format(error.code))
 
