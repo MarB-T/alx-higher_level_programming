@@ -14,4 +14,4 @@ def resp_header():
 
 
 if __name__ == '__main__':
-    resp_header
+    resp_header()
