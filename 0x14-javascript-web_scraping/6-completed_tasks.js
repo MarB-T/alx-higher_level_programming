@@ -5,13 +5,18 @@ const file = process.argv[2];
 request(file, function (err, response, body) {
 	if (err) console.log(err);
 	else {
-		const tasks = JSON.parse(body);
-		let completed = 0;
-		for (const task in tasks) {
-			if (task.completed == true) {
-				completed++;
-			}
-		}
-		console.log(completed);
-	}
+	    let results = {};
+    let json = JSON.parse(body);
+    for (let i = 0; i < json.length; i++) {
+      let task = json[i];
+      if (task['completed'] === true) {
+        if (results[task['userId']] !== undefined) {
+          results[task['userId']] += 1;
+        } else {
+          results[task['userId']] = 1;
+        }
+      }
+    }
+    console.log(results);
+  }
 });
