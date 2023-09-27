@@ -1,5 +1,7 @@
 #!/usr/bin/node
-
+/*
+ * compute completed tasks
+ */
 const request = require('request');
 const file = process.argv[2];
 request(file, function (err, response, body) {
